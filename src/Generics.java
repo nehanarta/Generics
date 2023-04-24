@@ -1,22 +1,20 @@
 public class Generics {
-    public void maxString(String s1,String s2,String s3) {
-        String MaxS = s2;
-        if (s1.compareTo(MaxS) > 0) {
-            MaxS = s1;
-
+        public static <T extends Comparable> T printMaxNum(T x, T y, T z) {
+            T max = x;
+            if (y.compareTo(max) > 0) {
+                max = y;
+            }
+            if (z.compareTo(max) > 0) {
+                max = z;
+            }
+            return max;
         }
-        if (s2.compareTo(MaxS) > 0) {
-            MaxS = s2;
-        }
-        if (s3.compareTo(MaxS) > 0) {
-            MaxS = s3;
-        }
-        System.out.println(MaxS);
-    }
         public static void main(String[] args) {
-            System.out.println("Maximum float");
+            System.out.println("three two one generics");
             Generics obj1=new Generics();
-            obj1.maxString("apple","peach","banana");
+            obj1.printMaxNum(60,89,90);
+            obj1.printMaxNum(1.1f,1.2f,1.3f);
+            obj1.printMaxNum("apple","peach","banana");
         }
 
     }
